@@ -1,0 +1,33 @@
+{
+  "name": "rejection",
+  "version": "0.0.1",
+  "description": "a module to create better error objects",
+  "main": "src/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeMedic42/rejection.git"
+  },
+  "author": "CodeMedic42",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodeMedic42/rejection/issues"
+  },
+  "homepage": "https://github.com/CodeMedic42/rejection#readme",
+  "devDependencies": {
+    "chai": "3.5.0",
+    "dirty-chai": "1.2.2",
+    "gulp": "3.9.1",
+    "gulp-mocha": "3.0.1",
+    "lodash": "4.17.4",
+    "mocha": "3.2.0"
+  },
+  "dependencies": {
+    "lodash": "4.17.4"
+  }
+}

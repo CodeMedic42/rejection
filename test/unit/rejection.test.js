@@ -15,4 +15,14 @@ describe('Rejection Tests', function mainTest() {
         expect(httpRej.data).to.equal('testData');
         expect(httpRej.innerRejection).to.be.null();
     });
+
+    it('toString', () => {
+        const httpRej = Rejection('testMessage', 'testData', null);
+
+        const observed = httpRej.toString();
+
+        const expectedPattern = /\| Message: testMessage\n\| Stack: at [a-zA-Z.]+ \(.*\)\n(\| {8}at [a-zA-Z.]+ \(.*\)\n)+\| {8}at [a-zA-Z.]+ \(.*\)/;
+
+        expect(observed).to.match(expectedPattern);
+    });
 });

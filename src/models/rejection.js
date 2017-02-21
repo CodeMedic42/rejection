@@ -1,6 +1,6 @@
 const Util = require('util');
 const _ = require('lodash');
-const SingleSpace = require('./singleSpace.js');
+const SingleSpace = require('single-space');
 
 module.exports = SingleSpace('rejection.rejection', () => {
     function cleanStack(stack) {
@@ -61,8 +61,9 @@ module.exports = SingleSpace('rejection.rejection', () => {
 
     Util.inherits(Rejection, Error);
 
-    Rejection.prototype.toString = function toString(paddingCount, numStack) {
-        const padCount = _.isNumber(paddingCount) && paddingCount > 0 ? paddingCount : 0;
+    Rejection.prototype.toString = function toString(padCount, numStack) {
+        numStack = _.isFinite(numStack) && numStack >= 0 ? numStack : 10;
+        padCount = _.isFinite(padCount) && padCount > 0 ? padCount : 0;
 
         const pad = _.repeat(' ', padCount);
         let message = `${pad}| Message: ${this.message}`;

@@ -1,5 +1,5 @@
 const Util = require('util');
-const SingleSpace = require('./singleSpace.js');
+const SingleSpace = require('single-space');
 const Rejection = require('./rejection');
 
 module.exports = SingleSpace('rejection.httpRejection', () => {

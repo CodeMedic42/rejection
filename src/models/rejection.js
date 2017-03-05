@@ -1,6 +1,7 @@
 import Util from 'util';
 import _isString from 'lodash/isString';
 import _isNil from 'lodash/isNil';
+import _merge from 'lodash/merge';
 import SingleSpace from 'single-space';
 
 export default SingleSpace('rejection-js.rejection', () => {
@@ -62,7 +63,9 @@ export default SingleSpace('rejection-js.rejection', () => {
         this.innerRejection = cleanInner(innerRejection);
         this.data = _isNil(data) ? null : data;
         this.stack = cleanStack(this.stack);
-        this.customProps = [{ label: 'Data', name: 'data' }];
+        this.customProps = {
+            Data: 'data'
+        };
     };
 
     Util.inherits(_Rejection, Error);
@@ -70,14 +73,10 @@ export default SingleSpace('rejection-js.rejection', () => {
     // Static Functions
     // -------------------------------------------------------------------------
 
-    _Rejection.inherit = function inherit(subClass, message, data, innerRejection) {
+    _Rejection.inherit = function inherit(subClass, message, data, innerRejection, additionalProperties) {
         _Rejection.call(subClass, message, data, innerRejection);
 
-        return {
-            register: (label, name) => {
-                subClass.customProps.push({ label, name });
-            }
-        };
+        _merge(subClass.customProps, additionalProperties);
     };
 
     return _Rejection;

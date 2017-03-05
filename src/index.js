@@ -1,7 +1,9 @@
-const Rejection = require('./models/rejection.js');
-const HttpRejection = require('./models/httpRejection.js');
+import Rejection from './models/rejection';
+import HttpRejection from './models/http-rejection';
+import ConsoleFormatter from './formatters/console-formatter';
 
 module.exports = {
     Rejection,
-    HttpRejection
+    HttpRejection,
+    ConsoleFormatter
 };

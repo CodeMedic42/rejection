@@ -1,8 +1,8 @@
-const Util = require('util');
-const SingleSpace = require('single-space');
-const Rejection = require('./rejection');
+import Util from 'util';
+import SingleSpace from 'single-space';
+import Rejection from './rejection';
 
-module.exports = SingleSpace('rejection.httpRejection', () => {
+export default SingleSpace('rejection-js.httpRejection', () => {
     function HttpRejection(message, code, data, innerRejection) {
         if (!(this instanceof HttpRejection)) {
             return new HttpRejection(message, code, data, innerRejection);

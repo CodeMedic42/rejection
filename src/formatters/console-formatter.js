@@ -7,6 +7,15 @@ import Util from 'util';
 import Colors from 'colors';
 import Rejection from '../models/rejection';
 
+/**
+ * Formats the passed rejection object.
+ *
+ * @param  {Rejection} rejection The rejection object to format.
+ * @param  {FormatOptions} options   The options to use when formating.
+ * @param  {[type]} padCount  The the current padding to add to the beginning of each line.
+ *
+ * @return {string}           The formated string
+ */
 function _format(rejection, options, padCount) {
     const useColors = options.useColors;
     const numStack = options.stackTraceLimit;
@@ -75,6 +84,14 @@ function _format(rejection, options, padCount) {
     return _trimStart(message, '\n');
 }
 
+/**
+ * Gets the appropriate color function from Colors.
+ *
+ * @param  {string} color        The color to lookup
+ * @param  {string} defaultColor The default color to use if the first does not exist.
+ *
+ * @return {function}            The function to use to format a string for console output.
+ */
 function getColor(color, defaultColor) {
     const colorFunc = _get(Colors, color);
 
@@ -85,6 +102,13 @@ function getColor(color, defaultColor) {
     return _get(Colors, defaultColor);
 }
 
+/**
+ * Takes in the values defined by the user and adds default values where needed for colors.
+ *
+ * @param {[type]} colors The colors information to add defaults to.
+ *
+ * @return {function}     The color configuration information.
+ */
 function setColors(colors) {
     const _colors = _isNil(colors) ? {} : colors;
 
@@ -95,6 +119,13 @@ function setColors(colors) {
     return _colors;
 }
 
+/**
+ * Takes in the values defined by the user and adds default values where needed for data properties.
+ *
+ * @param {[type]} colors The colors information to add defaults to.
+ *
+ * @return {function}     The color configuration information.
+ */
 function setData(data) {
     const _data = _isNil(data) ? {} : data;
 
@@ -108,6 +139,13 @@ function setData(data) {
     return _data;
 }
 
+/**
+ * cleans up the passed in options object and adds default values to it.
+ *
+ * @param  {FormatOptions} options The options passed in by the user.
+ *
+ * @return {FormatOptions}         The options to use when formatting.
+ */
 function cleanOptions(options) {
     const _options = _isNil(options) ? {} : options;
 
@@ -123,7 +161,11 @@ function cleanOptions(options) {
     return _options;
 }
 
-
+/**
+ * A constructor which will build an object which can format a Rejection object for outout to the console.
+ *
+ * @param {FormatOptions} options The options to use when formatting.
+ */
 function ConsoleFormatter(options) {
     if (!(this instanceof ConsoleFormatter)) {
         return new ConsoleFormatter(options);
@@ -132,6 +174,13 @@ function ConsoleFormatter(options) {
     this.options = cleanOptions(options);
 }
 
+/**
+ * Formats the passed rejection object for output to the console.
+ *
+ * @param  {Rejection} rejection The rejection object to format.
+ *
+ * @return {string}           The formated string.
+ */
 ConsoleFormatter.prototype.format = function format(rejection) {
     if (!(rejection instanceof Rejection)) {
         throw new Error('Must be of type Rejection.');

@@ -2,7 +2,7 @@
   "name": "rejection",
   "version": "1.0.0",
   "description": "a module to create better error objects",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "directories": {
     "test": "tests"
   },

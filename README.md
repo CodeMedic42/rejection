@@ -2,8 +2,8 @@
 A module which contains better error objects.
 
 [![npm version](https://badge.fury.io/js/rejection-js.svg)](https://www.npmjs.com/package/rejection-js)
-[![Build Status](https://travis-ci.org/CodeMedic42/rejection.svg?branch=master)](https://travis-ci.org/CodeMedic42/rejection)
-[![Coverage Status](https://coveralls.io/repos/github/CodeMedic42/rejection/badge.svg?branch=master)](https://coveralls.io/github/CodeMedic42/rejection?branch=master)
+[![Build Status](https://travis-ci.org/CodeMedic42/rejection-js.svg?branch=master)](https://travis-ci.org/CodeMedic42/rejection-js)
+[![Coverage Status](https://coveralls.io/repos/github/CodeMedic42/rejection-js/badge.svg?branch=master)](https://coveralls.io/github/CodeMedic42/rejection-js?branch=master)
 
 ###Why does this module exist?
 

@@ -18,14 +18,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CodeMedic42/rejection.git"
+    "url": "git+https://github.com/CodeMedic42/rejection-js.git"
   },
   "author": "CodeMedic42",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/CodeMedic42/rejection/issues"
+    "url": "https://github.com/CodeMedic42/rejection-js/issues"
   },
-  "homepage": "https://github.com/CodeMedic42/rejection#readme",
+  "homepage": "https://github.com/CodeMedic42/rejection-js#readme",
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-eslint": "^7.1.1",

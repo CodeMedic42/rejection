@@ -1,6 +1,6 @@
 {
   "name": "rejection-js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A module to create better error objects",
   "main": "lib/index.js",
   "directories": {
